@@ -1,0 +1,406 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body,
+html {
+
+    height: 100%;
+}
+
+.bg {
+    background: url('./R.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.navBar {
+    width: 100%;
+    background: black;
+    color: white;
+}
+
+.nav-container {
+    padding: 1rem;
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.nav-container .nav-contents {
+    display: flex;
+    justify-content: flex-end;
+    /* align-items: center; */
+    gap: 2rem;
+    list-style: none;
+
+}
+
+.nav-container h1 {
+    text-transform: uppercase;
+}
+
+.nav-contents li {
+    letter-spacing: 1px;
+    font-size: 1rem;
+    transition: .3s;
+}
+
+.nav-contents li:hover {
+    transform: scale(1.2);
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.container.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.container {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    width: 40%;
+    background: rgb(233, 233, 244);
+    background: linear-gradient(90deg, rgba(253, 253, 254, 1) 0%, rgba(228, 206, 206, 1) 35%, rgb(160, 138, 138) 100%);
+    height: 50%;
+    align-self: center;
+    padding: 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-self: center;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.container h2 {
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 3rem;
+}
+
+.container p {
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+}
+
+button {
+    text-align: center;
+    border: none;
+    background-color: black;
+    color: antiquewhite;
+    padding: 1rem 1.5rem;
+
+
+    border-radius: 20px;
+    transition: 0.3s;
+    align-self: center;
+    font-size: 1rem;
+
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.main .rem {
+    display: none;
+}
+
+.container button:hover {
+    box-shadow: 3px 3px 3px 0 black;
+    cursor: pointer;
+    background: rgb(109, 19, 129);
+    margin: 0.5rem auto;
+
+}
+
+.popup-quiz.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.popup-quiz {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    width: 40%;
+    background: rgb(233, 233, 244);
+    background: linear-gradient(90deg, rgba(253, 253, 254, 1) 0%, rgba(228, 206, 206, 1) 35%, rgb(160, 138, 138) 100%);
+    height: 50%;
+    align-self: center;
+    padding: 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-self: center;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.popup-quiz h2 {
+    font-size: 2rem;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: rgb(42, 4, 78);
+}
+
+
+.info-btn {
+
+    margin: .5rem 2rem;
+}
+
+
+
+.info-btn.exit {
+    background: red;
+}
+
+.info-btn.continue {
+    background: green;
+
+}
+
+.info-btn:hover {
+    box-shadow: 3px 3px 3px 0 black;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.quiz-container.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.quiz-container {
+    color: white;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    background: black;
+    box-shadow: 2px 5px 5px 2px white;
+    width: 50%;
+    height: 70%;
+    align-self: center;
+    padding: 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-self: center;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.quiz-section {
+
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    /* border: 2px solid red; */
+}
+
+.quiz-section h3 {
+    font-size: 32px;
+    padding: 0.5rem 1rem;
+    align-self: center;
+    background: linear-gradient(45deg, transparent, #c40094, transparent);
+}
+
+.quiz-footer {
+
+    font-size: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.quiz-footer button {
+    background-color: #c40094;
+
+}
+
+.quiz-footer button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.next-btn {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.next-btn.active {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.quiz-footer span {
+    font-size: 1.2rem;
+}
+
+.quiz-header {
+    padding: 0.5rem 1rem;
+    background: #c40094;
+    border-radius: 10px;
+}
+
+.quiz-header span {
+
+    font-size: 20px;
+}
+
+.option-list {
+    width: 100%;
+
+}
+
+.option {
+    text-align: left;
+    padding: 10px;
+    border: 2px solid rgba(252, 250, 250, 0.7);
+    margin: 5px auto;
+    font-size: 17px;
+    background-color: black;
+    transition: 0.3s;
+    border-radius: 10px;
+}
+
+.option:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+
+}
+
+.option:hover {
+    background: blue;
+}
+
+.option.correct {
+    background: green;
+}
+
+.option.wrong {
+    background: red;
+
+}
+
+.option.disabled {
+    pointer-events: none;
+}
+
+.result {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    width: 40%;
+    background: rgb(233, 233, 244);
+    background: linear-gradient(90deg, rgba(253, 253, 254, 1) 0%, rgba(228, 206, 206, 1) 35%, rgb(160, 138, 138) 100%);
+    height: 60%;
+    align-self: center;
+    padding: 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-self: center;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.result.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+
+.result button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.result h2 {
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+.progress {
+    font-size: 1.2rem;
+    color: black;
+
+    font-weight: 600;
+}
+
+/* .circular {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    color: white;
+    background: conic-gradient(purple 2deg, red 0deg);
+    margin: 1rem auto;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+} */
+
+/* .circular {
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    background: black;
+    border-radius: 50%;
+    content: " ";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.circ {
+
+    position: relative;
+    width: 150px;
+    height: 150px;
+    color: white;
+    background: conic-gradient(purple 2deg, red 0deg);
+    margin: 1rem auto;
+    border-radius: 50%;
+    text-align: center;
+
+} */
+
+.score-text {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    padding: 1rem auto;
+}
+
+.response {
+    margin: 1rem;
+    font-size: 1.6rem;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 2rem;
+}
